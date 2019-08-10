@@ -1,0 +1,59 @@
+/* div{
+
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+
+  float: left;
+  border-right: 1px solid #bbb;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+} */
+
+/* Change the link color to #111 (black) on hover */
+/* li a:hover {
+  background-color: #111;
+} */
+
+div.panel-row{
+  margin: 0;
+  height: 100%;
+}
+div.panel-row.background{
+  background-color: #D9DDED;
+}
+div.panel-col{
+  font-family: 'Roboto Mono', monospace;  
+  padding: 0;
+}
+div.panel-col.top{
+  height: 140px;
+}
+
+div.panel-col.left{
+  background: #A0AAD2;
+  text-align: center;
+  /* max-width: 250px; */
+}
+
+.panel-menu-label{
+  color: #ffffff;
+  padding: 20px;
+  margin: 0;
+  font-size: 150%;
+  font-weight: 400;
+}
