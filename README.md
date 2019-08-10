@@ -1,1 +1,1 @@
-# chunk-jones-front-end-sophie
+# Administrative Web Portal for Chuck Jones Center for Creativity and Connect
