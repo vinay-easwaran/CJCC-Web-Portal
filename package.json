@@ -4,7 +4,7 @@
   "description": "Web Portal designed with a RESTful API on the backend and a ReactJS UI.",
   "main": "index.js",
   "scripts": {
-    "start": "node frontend"
+    "start": "npm start frontend"
 	},
   "keywords": [],
   "author": "",
