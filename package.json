@@ -4,8 +4,8 @@
   "description": "Web Portal designed with a RESTful API on the backend and a ReactJS UI.",
   "main": "index.js",
   "scripts": {
-    "start": "node backend"
-	"build": cd frontend/ && npm install && npm audit fix && npm run build""
+    "start": "node backend",
+	"build": cd frontend/ && npm install && npm run build""
 	},
   "keywords": [],
   "author": "",
