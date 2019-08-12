@@ -45,17 +45,19 @@ class Teacher_template_home extends Component {
     this.renderTable = this.renderTable.bind(this);
   }
   componentDidMount() {
-      axios.get('https://looneyteamapi.herokuapp.com/teachers')
+      axios.get('/api/teachers')
       .then(response => {
         console.log(response.data);
         this.setState({lists: response.data})
       })
   }
-//  componentDidMount() {
-  //    fetch('https://looneyteamapi.herokuapp.com/program_template')
-  //      .then(response => response.json())
-  //      .then(data => this.setState({ data }));
-  //  }
+
+ // componentDidMount() {
+ //     fetch('/api/teachers')
+ //       .then(response => response.json())
+ //       .then(data => this.setState({ data }));
+ //   }
+
   renderTable(){
     let temp = [];
     for (var x=0; x<this.state.lists.length; x++){
