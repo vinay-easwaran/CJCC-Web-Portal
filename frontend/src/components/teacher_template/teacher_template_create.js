@@ -30,17 +30,17 @@ change = (e) => {
 onSubmit = (e) => {
   e.preventDefault();
   console.log(this.state);
-  axios.post('http://looneyteamapi.herokuapp.com/teachers', {
-    first_name: this.first_name,
-    last_name: this.last_name,
-    username: this.username,
-    password: this.password,
-    email: this.email ,
-    verified: this.verified,
-    skills: this.skills,
-    specialty: this.specialty,
-    level: this.level,
-    address: this.address,
+  axios.post('/api/teachers', {
+    first_name: this.state.first_name,
+    last_name: this.state.last_name,
+    username: this.state.username,
+    password: this.state.password,
+    email: this.state.email ,
+    verified: this.state.verified,
+    skills: this.state.skills,
+    specialty: this.state.specialty,
+    level: this.state.level,
+    address: this.state.address,
   },{headers: {'Accept': 'application/json'}})
   .then(function (response) {
     console.log(response);
