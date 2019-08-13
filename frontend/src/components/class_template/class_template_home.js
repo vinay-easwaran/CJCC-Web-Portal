@@ -16,7 +16,7 @@ class Class_template_home extends Component {
 
   }
   componentDidMount() {
-      axios.get('https://looneyteamapi.herokuapp.com/class_template')
+      axios.get('/api/class_template')
       .then(response => {
         console.log(response.data);
         this.setState({lists: response.data})

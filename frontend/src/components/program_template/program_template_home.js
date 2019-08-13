@@ -34,7 +34,7 @@ class Program_template_home extends Component {
     this.renderTable = this.renderTable.bind(this);
   }
   componentDidMount() {
-      axios.get('https://looneyteamapi.herokuapp.com/program_template')
+      axios.get('/api/program_template')
       .then(response => {
         console.log(response.data);
         this.setState({lists: response.data})

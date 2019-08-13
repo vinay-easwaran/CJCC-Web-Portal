@@ -1,5 +1,6 @@
 import React from 'react';
 import './class_template.css';
+import axios from 'axios';
 import Navigation from '../Navigation'
 import {Container, Row, Col, Form, FormGroup, Label, Input, FormText} from 'reactstrap';
 import "bootstrap/dist/css/bootstrap.css";
@@ -21,6 +22,17 @@ change = (e) => {
 onSubmit = (e) => {
   e.preventDefault();
   console.log(this.state);
+  axios.post('/api/class_template', {
+    class_title: this.state.class_title,
+    class_description: this.state.class_description,
+  })
+  .then(function (response) {
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+
   this.setState({
     class_title: "",
     class_description: "",

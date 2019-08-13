@@ -324,7 +324,7 @@ const createProgramTemplate = (request, response) => {
 	const { program_title, program_description, program_category_id, skills } = request.body
 	console.log(request.body)
 	
-	pool.query('INSERT INTO program_template (program_title, program_description, program_category_id, skills) VALUES ($1, $2, $3, $4)', [program_title, program_description, program_category_id, skills], (error, results) => {
+	pool.query('INSERT INTO program_template (program_title, program_description, program_category_id, skills) VALUES ($1, $2, $3, $4)', [program_title, program_description, program_category_id, [skills]], (error, results) => {
 		if (error) {
 			throw error
 		}

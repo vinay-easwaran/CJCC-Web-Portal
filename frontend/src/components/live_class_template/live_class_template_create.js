@@ -1,5 +1,6 @@
 import React from 'react';
 import './live_class_template.css';
+import axios from 'axios';
 import Navigation from '../Navigation'
 import {Container, Row, Col, Form, FormGroup, Label, Input, FormText} from 'reactstrap';
 import "bootstrap/dist/css/bootstrap.css";
@@ -30,6 +31,21 @@ change = (e) => {
 onSubmit = (e) => {
   e.preventDefault();
   console.log(this.state);
+  axios.post('/api/classes', {
+    is_part_of_program: this.state.is_part_of_program,
+    lattitude: this.state.lattitude,
+    longitude: this.state.longitude,
+    max_students: this.state.max_students,
+    time_start: this.state.time_start,
+    time_end: this.state.time_end,
+  })
+  .then(function (response) {
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+  
   this.setState({
     is_part_of_program: false,
     lattitude: "",

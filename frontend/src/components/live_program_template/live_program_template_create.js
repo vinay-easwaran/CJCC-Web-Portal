@@ -1,6 +1,7 @@
 import React from 'react';
 import './live_program_template.css';
 import Navigation from '../Navigation'
+import axios from 'axios';
 import {Container, Row, Col, Form, FormGroup, Label, Input, FormText} from 'reactstrap';
 import "bootstrap/dist/css/bootstrap.css";
 
@@ -23,6 +24,21 @@ change = (e) => {
 onSubmit = (e) => {
   e.preventDefault();
   console.log(this.state);
+  axios.post('/api/liveprogram', {
+    region_id: this.state.region_id,
+    program_template_id: this.state.program_template_id,
+    primary_teacher: this.state.primary_teacher,
+    main_location: this.state.main_location,
+    start_date: this.state.start_date,
+    end_date: this.state.end_date,
+  })
+  .then(function (response) {
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+  
   this.setState({
     region_id: "",
     program_template_id: "",

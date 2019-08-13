@@ -1,5 +1,6 @@
 import React from 'react';
 import './program_template.css';
+import axios from 'axios';
 import Navigation from '../Navigation'
 import {Container, Row, Col, Form, FormGroup, Label, Input, FormText} from 'reactstrap';
 import "bootstrap/dist/css/bootstrap.css";
@@ -21,6 +22,18 @@ change = (e) => {
 onSubmit = (e) => {
   e.preventDefault();
   console.log(this.state);
+  axios.post('/api/program_template', {
+    program_title: this.state.program_title,
+    program_description: this.state.program_description,
+    skills: this.state.skills
+  })
+  .then(function (response) {
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.log(error);
+  }); 
+  
   this.setState({
     program_title: "",
     program_description: "",

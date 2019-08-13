@@ -40,7 +40,7 @@ class Live_program_template_home extends Component {
 
   }
   componentDidMount() {
-      axios.get('https://looneyteamapi.herokuapp.com/liveprogram')
+      axios.get('/api/liveprogram')
       .then(response => {
         console.log(response.data);
         this.setState({lists: response.data})

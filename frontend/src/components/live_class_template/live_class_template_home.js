@@ -15,7 +15,7 @@ class Live_class_template_home extends Component {
     this.renderTable= this.renderTable.bind(this);
   }
   componentDidMount() {
-      axios.get('https://looneyteamapi.herokuapp.com/classes')
+      axios.get('/api/classes')
       .then(response => {
         console.log(response.data);
         this.setState({lists: response.data})
