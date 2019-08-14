@@ -9,7 +9,7 @@ class Class_template_form extends React.Component {
   state = {
     class_title: "",
     class_description: "",
-    specialty: "",
+    class_category: "",
     skills: "",
   }
 
@@ -25,6 +25,8 @@ onSubmit = (e) => {
   axios.post('/api/class_template', {
     class_title: this.state.class_title,
     class_description: this.state.class_description,
+    class_category: this.state.class_category,
+    skills: this.state.skills,
   })
   .then(function (response) {
     console.log(response);
@@ -36,7 +38,7 @@ onSubmit = (e) => {
   this.setState({
     class_title: "",
     class_description: "",
-    specialty: "",
+    class_category: "",
     skills: "",
   })
 };
@@ -81,13 +83,13 @@ onSubmit = (e) => {
             <Col md={6}>
               <FormGroup>
                 <Label>
-                  Specialties
+                  Class Category
                 </Label>
                   <Input
                     type = 'textarea'
-                    name = "specialty"
-                    placeholder="Specialty"
-                    value = {this.state.specialty}
+                    name = "class_category"
+                    placeholder="CS, Math, etc."
+                    value = {this.state.class_category}
                     onChange={e => this.change(e)}
                   />
               </FormGroup>

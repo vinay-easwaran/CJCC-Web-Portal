@@ -117,6 +117,7 @@ onSubmit = (e) => {
           />
           </Col>
         </Row>
+        <br/>
         <button onClick={e => this.onSubmit(e)}>Submit</button>
       </Form>
     </div>

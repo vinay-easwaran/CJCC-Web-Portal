@@ -9,7 +9,7 @@ class ProgramTemplateForm extends React.Component {
   state = {
     program_title: "",
     program_description: "",
-    program_specialties: "",
+    program_category_id: "",
     skills: "",
   }
 
@@ -25,6 +25,7 @@ onSubmit = (e) => {
   axios.post('/api/program_template', {
     program_title: this.state.program_title,
     program_description: this.state.program_description,
+    program_category_id: this.state.program_category_id,
     skills: this.state.skills
   })
   .then(function (response) {
@@ -37,7 +38,7 @@ onSubmit = (e) => {
   this.setState({
     program_title: "",
     program_description: "",
-    program_specialties: "",
+    program_category_id: "",
     skills: "",
   })
 };
@@ -68,12 +69,12 @@ onSubmit = (e) => {
         />
         </Row>
         <Row>
-        <Label>Specialties</Label>
+        <Label>Program Category - ID</Label>
         <Input
-          name = "program_specialties"
-          placeholder="senior, pre-k, etc"
-          value = {this.state.program_specialties}
-          onChange={e => this.setState( { program_specialties: e.target.value} )}
+          name = "program_category_id"
+          // placeholder="senior, pre-k, etc"
+          value = {this.state.program_category_id}
+          onChange={e => this.setState( { program_category_id: e.target.value} )}
         />
         </Row>
         <Row>

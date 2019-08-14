@@ -19,7 +19,7 @@ class Live_class_template_form extends React.Component {
     region_id: "",
     program_template_id: "",
     class_template_id: "",
-    specialty: "",
+    name: "",
   }
 
 change = (e) => {
@@ -38,6 +38,7 @@ onSubmit = (e) => {
     max_students: this.state.max_students,
     time_start: this.state.time_start,
     time_end: this.state.time_end,
+    name: this.state.name
   })
   .then(function (response) {
     console.log(response);
@@ -58,7 +59,7 @@ onSubmit = (e) => {
     region_id: "",
     program_template_id: "",
     class_template_id: "",
-    specialty: "",
+    name: "",
   })
 };
 
@@ -182,11 +183,10 @@ handleChange = () => {
         </Row>
         <Row>
           <Col md={12}>
-          <Label>Specialties</Label>
+          <Label>Class Name</Label>
           <Input
-            name = "specialty"
-            placeholder="senior, pre-k, etc"
-            value = {this.state.specialty}
+            name = "name"
+            value = {this.state.name}
             onChange={e => this.change(e)}
           />
           </Col>

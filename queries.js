@@ -184,9 +184,9 @@ const getClassTemplate = (request, response) => {
 }
 
 const createClassTemplate = (request, response) => {
-	const { class_title, class_description, class_category } = request.body
+	const { class_title, class_description, class_category, skills } = request.body
 	
-	pool.query('INSERT INTO class_template (class_title, class_description, class_category) VALUES ($1, $2, $3)', [class_title, class_description, class_category], (error, results) => {
+	pool.query('INSERT INTO class_template (class_title, class_description, class_category, skills) VALUES ($1, $2, $3, $4)', [class_title, class_description, class_category, [skills]], (error, results) => {
 		if (error) {
 			throw error
 		}
