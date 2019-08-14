@@ -80,7 +80,7 @@ onSubmit = (e) => {
           <Label>Primary Teacher</Label>
           <Input
             name = "primary_teacher"
-            //placeholder="Primary Teacher"
+            placeholder="Teacher ID (e.g) 1, 2"
             value = {this.state.primary_teacher}
             onChange={e => this.change(e)}
           />

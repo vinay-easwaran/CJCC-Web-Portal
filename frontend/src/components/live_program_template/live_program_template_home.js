@@ -51,11 +51,13 @@ class Live_program_template_home extends Component {
     for (var x=0; x<this.state.lists.length; x++){
       temp.push(
         <tr>
+          <td>{this.state.lists[x].program_live_id}</td>
           <td>{this.state.lists[x].program_template_id}</td>
-          <td>{this.state.lists[x].program_title}</td>
-          <td>{this.state.lists[x].program_description}</td>
-          <td>{this.state.lists[x].program_category_id}</td>
-
+          <td>{this.state.lists[x].region_id}</td>
+          <td>{this.state.lists[x].main_location}</td>
+          <td>{this.state.lists[x].primary_teacher}</td>
+          <td>{this.state.lists[x].start_date}</td>
+          <td>{this.state.lists[x].end_date}</td>
         </tr>
       )
     };
@@ -63,10 +65,13 @@ class Live_program_template_home extends Component {
       <Table striped bordered hover variant="dark">
         <thead>
           <tr>
+            <th>Program Live ID</th>
             <th>Program Template ID</th>
-            <th>Program Title</th>
-            <th>Program Description</th>            
-            <th>Program Category ID</th>
+            <th>Region ID</th>
+            <th>Main Location</th>            
+            <th>Primary Teacher ID</th>
+            <th>Start Date</th>
+            <th>End Date</th>
           </tr>
         </thead>
         <tbody>
@@ -82,12 +87,12 @@ class Live_program_template_home extends Component {
         <Navigation />
         <header>
  
-          <h1> Live Program Template Tables</h1>
+          <h1> Live Program Tables</h1>
           <div>
           {this.renderTable()}
           {/* {this.state.lists.map((x) => {
             return (<div>
-              <p>program_template_id: {x.program_template_id}, program_title: {x.program_title} , program_description: {x.program_description}, program_category_id: {x.program_category_id}</p>
+              <p>program_live_id: {x.program_live_id}, program_template_id: {x.program_template_id} , region_id: {x.region_id}, main_location: {x.main_location}, primary_teacher: {x.primary_teacher}, start_date: {x.start_date}, end_date: {x.end_date}</p>
             </div>)
         })} */}
  
