@@ -126,12 +126,23 @@ const updateClass = (request, response) => {
 const deleteClass = (request, response) => {
 	const id = parseInt(request.params.id)
 	
-	pool.query('DELETE FROM teachers WHERE class_id = $1', [id], (error, results) => {
+	pool.query('DELETE FROM classes WHERE class_id = $1', [id], (error, results) => {
 		if (error)
 		{
 			throw error
 		}
 		response.status(200).send('Class deleted with ID: ${id}')
+	})
+}
+
+const deleteClassTeacherCounts = (request, response) => {
+	const id = parseInt(request.params.id)
+
+	pool.query('DELETE FROM class_teacher_counts WHERE class_id = $1', [id], (error, results) => {
+		if (error)
+		{
+			throw error
+		}
 	})
 }
 
@@ -243,7 +254,7 @@ const deleteClassTemplate = (request, response) => {
 		{
 			throw error
 		}
-		response.status(200).send('Teacher deleted with ID: ${id}')
+		response.status(200).send('Class Template deleted with ID: ${id}')
 	})
 }
 
@@ -392,11 +403,10 @@ const updateUnavailability = (request, response) => {
 }
 
 const deleteUnavailability = (request, response) => {
-	const query = request.params.query
 	const id = parseInt(request.params.query)
 	
-	pool.query('DELETE FROM teacher_unavailability WHERE monday = $1 OR tuesday = $1 OR wednesday = $1 OR thursday = $1 OR friday = $1 OR teacher_id = $2', 
-	[query, id], (error, results) => {
+	pool.query('DELETE FROM teacher_unavailability WHERE teacher_id = $1', 
+	[id], (error, results) => {
 		if (error)
 		{
 			throw error
@@ -527,9 +537,9 @@ const deleteLiveProgram = (request, response) => {
 	const query = request.params.query
 	const id = parseInt(request.params.query)
 	
-	poo.query('DELETE FROM program_live WHERE main_location = $1 OR start_date = $1 OR end_date = $1 OR program_live_id = $2', [query, id],
+	pool.query('DELETE FROM program_live WHERE main_location = $1 OR start_date = $1 OR end_date = $1 OR program_live_id = $2', [query, id],
 	(error, results) => {
-		if (err0r)
+		if (error)
 		{
 			throw error
 		}
@@ -550,6 +560,7 @@ module.exports = {
 	createClass,
 	updateClass,
 	deleteClass,
+	deleteClassTeacherCounts,
 	getAllLevels,
 	getLevelOrder,
 	getAllClassTemplates,

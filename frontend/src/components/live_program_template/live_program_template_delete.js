@@ -1,5 +1,6 @@
 import React from 'react';
 import './live_program_template.css';
+import axios from 'axios';
 import Navigation from '../Navigation'
 
 class Live_program_template_form_delete extends React.Component {
@@ -16,6 +17,16 @@ change = (e) => {
 onSubmit = (e) => {
   e.preventDefault();
   console.log(this.state);
+  axios.delete("/api/liveprogram/" + this.state.live_program_template_id, {
+    data: { live_program_template_id: this.state.live_program_template_id, }
+  })
+  .then(function (response) {
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+  
   this.setState({
     live_program_template_id: "",
   })

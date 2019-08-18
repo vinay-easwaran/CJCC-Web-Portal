@@ -17,7 +17,7 @@ change = (e) => {
 onSubmit = (e) => {
   e.preventDefault();
   console.log(this.state);
-  axios.delete('/api/teachers/' + this.state.teacher_id, {
+  axios.delete('/api/teacher_unavailability/' + this.state.teacher_id, {
   	data: { teacher_id: this.state.teacher_id, }
   })
   .then(function (response) {
@@ -26,6 +26,16 @@ onSubmit = (e) => {
   .catch(function (error) {
   	console.log(error);
   });
+
+  axios.delete("/api/teachers/" + this.state.teacher_id, {
+    data: { teacher_id: this.state.teacher_id }
+  })
+  .then(function (response) {
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.log(error);
+  })
   
   this.setState({
     teacher_id: "",

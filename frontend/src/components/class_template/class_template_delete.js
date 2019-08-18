@@ -1,5 +1,6 @@
 import React from 'react';
 import './class_template.css';
+import axios from 'axios';
 import Navigation from '../Navigation'
 
 class Class_template_form_delete extends React.Component {
@@ -16,8 +17,19 @@ change = (e) => {
 onSubmit = (e) => {
   e.preventDefault();
   console.log(this.state);
+
+  axios.delete("/api/class_template/" + this.state.class_template_id, {
+    data: { class_template_id: this.state.class_template_id, }
+  })
+  .then(function (response) {
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+
   this.setState({
-    program_id: "",
+    class_template_id: "",
   })
 };
 
