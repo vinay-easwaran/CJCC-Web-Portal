@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import Table from 'react-bootstrap/Table';
 import Navigation from '../Navigation'
 import axios from 'axios'
+
+import ReactTable from "react-table";
+import "react-table/react-table.css";
 // CSS?
 
 // class Program_template_home extends Component {
@@ -72,19 +75,43 @@ class Program_template_home extends Component {
     )
   }
   render() {
+    const {lists} = this.state
     return (
       <div>
         <Navigation />
-        <header>
-          
-          <h1> Program Template Tables </h1>
-          <div>
-          {this.renderTable()}
-          
-  
-  
-          </div>
-        </header>
+        <ReactTable
+          data={lists}
+          filterable
+          defaultFilterMethod = {(filter,row) =>
+          String(row[filter.id]).includes(filter.value)}
+          columns = {[
+            {
+              Header: 'Program Template ID',
+              columns: [{
+                Header: 'sort',
+                accessor: 'program_template_id'
+              }]
+            },
+            {
+              Header: 'Program Title',
+              columns: [{
+                Header: 'Program Description',
+                columns: [{
+                  Header: 'sort',
+                  accessor: 'program_title'
+                }]
+              }]
+            },
+            {
+              Header: 'Program Description',
+              columns: [{
+                Header: 'sort',
+                accessor: 'program_description'
+              }]
+            }
+
+          ]}
+        />
       </div>
 
       
