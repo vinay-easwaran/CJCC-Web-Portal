@@ -34,3 +34,12 @@ li a {
 li a:hover {
   background-color: #111;
 }
+
+#ctcpage{
+  text-align: center;
+}
+#ctcimage, #ctcform{
+  display: inline-block;
+  vertical-align: top;
+}
+

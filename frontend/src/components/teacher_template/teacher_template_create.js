@@ -64,11 +64,14 @@ onSubmit = (e) => {
 };
  
  
-  render() {
-    return(
-      <div>
-      <Navigation />
-      <h1> Create a new Teacher_Template Object </h1>
+render() {
+  return(
+  <div>
+    <Navigation />
+    <div id='ttcpage'>
+      <h1> Create a new Teacher Object </h1>
+      <img id='ttcimage' src={require('../assets/bugsBunnyArtist.png')} alt=''></img>
+      <div id='ttcform'>
       <Form>
         <Row>
           <Col md={6}>
@@ -106,7 +109,7 @@ onSubmit = (e) => {
           <Label>Username</Label>
           <Input
             name = "username"
-            //placeholder="Username"
+            placeholder="Username"
             value = {this.state.username}
             onChange={e => this.change(e)}
           />
@@ -115,7 +118,7 @@ onSubmit = (e) => {
           <Label>Password</Label>
           <Input
             name = "password"
-            //placeholder="Password"
+            placeholder="Password"
             value = {this.state.password}
             onChange={e => this.change(e)}
           />
@@ -165,7 +168,7 @@ onSubmit = (e) => {
             />
           </Col>
         </Row>
- 
+
         <Label>Level</Label>
         <Input
           name = "level"
@@ -176,10 +179,12 @@ onSubmit = (e) => {
         <br />
         <button onClick={e => this.onSubmit(e)}>Submit</button>
       </Form>
+      <br/>
+      </div>
     </div>
-    
-    );
-  }
+  </div>
+  );
+}
  
  
  

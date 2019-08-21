@@ -49,80 +49,139 @@ onSubmit = (e) => {
   })
 };
 
-  render() {
-    return(
-      <div>
-      <Navigation />
-      <h1> Create a new Live Program Template Object </h1>
-      <Form>
-        <Row>
+render() {
+  return(
+    <div>
+    <Navigation />
+    <div id='lctcpage'>
+      <h1> Create a New Live Class </h1>
+      <img id='lctcimage' src={require('../assets/tweety.png')} alt=''></img>
+      <div id='lctcform'>
+        <Form>
+          <Row>
+          <Label>Is this part of a program? Check if True</Label>
+          <Col sm={2}>
+          <Input
+            type="checkbox"
+            value={this.state.is_part_of_program}
+            onChange={this.handleChange}
+          />
+          </Col>
+  
+          </Row>
+          <br />
+          <Row>
           <Col md={6}>
-          <Label>Region ID</Label>
+          <Label>Lattitude</Label>
           <Input
-            name = "region_id"
-            //placeholder="Region ID"
-            value = {this.state.region_id}
-            onChange={e => this.change(e)}
-          />
-          </Col>
-          <Col md={6}>
-          <Label>Program Template ID</Label>
-          <Input
-            name = "program_template_id"
-            //placeholder="Program Template ID"
-            value = {this.state.program_template_id}
-            onChange={e => this.change(e)}
-          />
-          </Col>
-        </Row>
-        <Row>
-          <Col md={12}>
-          <Label>Primary Teacher</Label>
-          <Input
-            name = "primary_teacher"
-            placeholder="Teacher ID (e.g) 1, 2"
-            value = {this.state.primary_teacher}
-            onChange={e => this.change(e)}
-          />
-          </Col>
-        </Row>
-        <Row>
-          <Col md={12}>
-          <Label>Main Location</Label>
-          <Input
-            name = "main_location"
-            //placeholder="Main Location"
-            value = {this.state.main_location}
-            onChange={e => this.change(e)}
-          />
-          </Col>
-        </Row>
-        <Row>
-          <Col md={6}>
-          <Label>Start Date</Label>
-          <Input
-            name = "start_date"
-            //placeholder="Start Date"
-            value = {this.state.start_date}
+            name = "lattitude"
+            //placeholder="Lattitude"
+            value = {this.state.lattitude}
             onChange={e => this.change(e)}
           />
           </Col>
           <Col md={6}>
-          <Label>End Date</Label>
+          <Label>Longitude</Label>
           <Input
-            name = "end_date"
-            //placeholder="End Date"
-            value = {this.state.end_date}
+            name = "longitude"
+            //placeholder="Longitude"
+            value = {this.state.longitude}
             onChange={e => this.change(e)}
           />
           </Col>
-        </Row>
-        <br/>
-        <button onClick={e => this.onSubmit(e)}>Submit</button>
-      </Form>
+          </Row>
+          <Row>
+            <Col md={6}>
+            <Label>Region ID</Label>
+            <Input
+              name = "region_id"
+              //placeholder="Region ID"
+              value = {this.state.region_id}
+              onChange={e => this.change(e)}
+            />
+            </Col>
+            <Col md={6}>
+            <Label>Max # Students</Label>
+            <Input
+              name = "max_students"
+              //placeholder="Max Student Count"
+              value = {this.state.max_students}
+              onChange={e => this.change(e)}
+            />
+            </Col>
+          </Row>
+          <Row>
+            <Col md={6}>
+            <Label>Start Time</Label>
+            <Input
+              name = "time_start"
+              //placeholder="Time Start"
+              value = {this.state.time_start}
+              onChange={e => this.change(e)}
+            />
+            </Col>
+            <Col md={6}>
+            <Label>End Time</Label>
+            <Input
+              name = "time_end"
+              //placeholder="Time End"
+              value = {this.state.time_end}
+              onChange={e => this.change(e)}
+            />
+            </Col>
+          </Row>
+          <br />
+          <Row>
+            <Col md={6}>
+            <Label>Program Template ID</Label>
+            <Input
+              name = "program_template_id"
+              //placeholder="Program Template Id"
+              value = {this.state.program_template_id}
+              onChange={e => this.change(e)}
+            />
+            </Col>
+            <Col md={6}>
+            <Label>Class Template ID</Label>
+            <Input
+              name = "class_template_id"
+              //placeholder="Class Template Id"
+              value = {this.state.class_template_id}
+              onChange={e => this.change(e)}
+            />
+            </Col>
+          </Row>
+          <Row>
+            <Col md={12}>
+            <Label>Description</Label>
+            <Input
+              type = 'textarea'
+              name = "description"
+              placeholder="..."
+              value = {this.state.description}
+              onChange={e => this.change(e)}
+            />
+            </Col>
+          </Row>
+          <Row>
+            <Col md={12}>
+            <Label>Specialties</Label>
+            <Input
+              name = "specialty"
+              placeholder="senior, pre-k, etc"
+              value = {this.state.specialty}
+              onChange={e => this.change(e)}
+            />
+            </Col>
+          </Row>
+          <br />
+          <button onClick={e => this.onSubmit(e)}>Submit</button>
+        </Form>
+      </div>
     </div>
-    );
-  }
+  </div>
+  );
+}
 
 
 

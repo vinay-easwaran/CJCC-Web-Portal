@@ -43,12 +43,14 @@ onSubmit = (e) => {
   })
 };
 
-  render() {
-    return(
-      <div>
-      <Navigation />
-      <h1> Create a new Class_Template Object</h1>
- 
+render() {
+  return(
+    <div id='page'>
+    <Navigation />
+    <div id='ctcpage'>
+    <h1> Create a new Class_Template Object</h1>
+    <img id='ctcimage' src={require('../assets/bugsBunnyCarrot.png')} alt=''></img>
+    <div id='ctcform'>
       <Form>
         <Row form>
           <Col md={12}>
@@ -83,13 +85,13 @@ onSubmit = (e) => {
             <Col md={6}>
               <FormGroup>
                 <Label>
-                  Class Category
+                  Specialties
                 </Label>
                   <Input
                     type = 'textarea'
-                    name = "class_category"
-                    placeholder="CS, Math, etc."
-                    value = {this.state.class_category}
+                    name = "specialty"
+                    placeholder="Specialty"
+                    value = {this.state.specialty}
                     onChange={e => this.change(e)}
                   />
               </FormGroup>
@@ -107,13 +109,15 @@ onSubmit = (e) => {
               </FormGroup>
             </Col>
         </Row>
- 
+
         <button onClick={e => this.onSubmit(e)}>Submit</button>
       </Form>
- 
+      </div>
+    
     </div>
-    );
-  }
+  </div>
+  );
+}
 
 
 
