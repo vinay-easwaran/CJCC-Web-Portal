@@ -3,6 +3,8 @@ import Navigation from '../Navigation'
 import axios from 'axios'
 import Table from 'react-bootstrap/Table';
 
+import ReactTable from "react-table";
+import "react-table/react-table.css";
 // CSS?
 
 // class Teacher_template_home extends Component {
@@ -98,24 +100,82 @@ class Teacher_template_home extends Component {
     )
   }
   render() {
+    const {lists} = this.state
     return (
       <div>
-         <Navigation />
-          <header>
-          <h1> Teacher Template Tables </h1>
-          <div>
-          {this.renderTable()}
-          {/* {this.state.lists.map((x) => {
-            return (<div>
-              <p>username: {x.username}, first_name: {x.first_name} , last_name: {x.last_name},
-              password: {x.password}, email: {x.email}, verified: {x.verified}, teacher_id: {x.teacher_id},
-                skills: {x.skills}, address: {x.address}</p>
-            </div>)
-        })} */}
-  
-  
-          </div>
-        </header>
+        <Navigation />
+        <h1> Teacher Template Tables </h1>
+        <ReactTable
+          data={lists}
+          filterable
+          defaultFilterMethod = {(filter,row) =>
+          String(row[filter.id]).includes(filter.value)}
+          columns = {[
+            {
+              Header: 'Username',
+              columns: [{
+                Header: 'sort',
+                accessor: 'username'
+              }]
+            },
+            {
+              Header: 'First Name',
+              columns: [{
+                Header: 'sort',
+                accessor: 'first_name'
+              }]
+            },
+            {
+              Header: 'Last Name',
+              columns: [{
+                Header: 'sort',
+                accessor: 'last_name'
+              }]
+            },
+            {
+              Header: 'Password',
+              columns: [{
+                Header: 'sort',
+                accessor: 'password'
+              }]
+            },
+            {
+              Header: 'Email',
+              columns: [{
+                Header: 'sort',
+                accessor: 'email'
+              }]
+            },
+            {
+              Header: 'Verified',
+              columns: [{
+                Header: 'sort',
+                accessor: 'verified'
+              }]
+            },
+            {
+              Header: 'Teacher ID',
+              columns: [{
+                Header: 'sort',
+                accessor: 'teacher_id'
+              }]
+            },
+            {
+              Header: 'Skills',
+              columns: [{
+                Header: 'sort',
+                accessor: 'skills'
+              }]
+            },
+            {
+              Header: 'Address',
+              columns: [{
+                Header: 'sort',
+                accessor: 'address'
+              }]
+            }
+          ]}
+        />
       </div>
       
     );

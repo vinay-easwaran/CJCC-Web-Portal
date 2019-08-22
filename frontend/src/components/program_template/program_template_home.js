@@ -79,6 +79,7 @@ class Program_template_home extends Component {
     return (
       <div>
         <Navigation />
+        <h1>Program Template Tables</h1>
         <ReactTable
           data={lists}
           filterable

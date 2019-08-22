@@ -3,6 +3,8 @@ import Navigation from '../Navigation'
 import axios from 'axios';
 import Table from 'react-bootstrap/Table';
 
+import ReactTable from "react-table";
+import "react-table/react-table.css";
 // CSS?
 
 class Class_template_home extends Component {
@@ -55,29 +57,53 @@ class Class_template_home extends Component {
     )
   }
   render() {
+    const {lists} = this.state
     return (
       <div>
-       <Navigation /> 
-        <header>
-         
-            <h1>
-              Class Template Tables
-            </h1>
-            <div>
-            {this.renderTable()}
-
-          {/* {this.state.lists.map((x) => {
-            return (<div>
-              <p> 
-              class_template_id:{x.class_template_id}, class_title: {x.class_title}, class_description: {x.class_description}, class_category: {x.class_category}, skills: {x.skills}
-              </p>
-            </div>) */}
-        {/* })} */}
-  
-  
-          </div>
-          
-        </header>
+       <Navigation />
+       <ReactTable
+       data={lists}
+          filterable
+          defaultFilterMethod = {(filter,row) =>
+          String(row[filter.id]).includes(filter.value)}
+          columns = {[
+            {
+              Header: 'Class Template ID',
+              columns: [{
+                Header: 'sort',
+                accessor: 'class_template_id'
+              }]
+            },
+            {
+              Header: 'Class Title',
+              columns: [{
+                Header: 'sort',
+                accessor: 'class_title'
+              }]
+            },
+            {
+              Header: 'Class Description',
+              columns: [{
+                Header: 'sort',
+                accessor: 'class_description'
+              }]
+            },
+            {
+              Header: 'Class Category',
+              columns: [{
+                Header: 'sort',
+                accessor: 'class_category'
+              }]
+            },
+            {
+              Header: 'Skills',
+              columns: [{
+                Header: 'sort',
+                accessor: 'skills'
+              }]
+            }
+          ]}
+        />
       </div>
       
     );

@@ -27,7 +27,9 @@ import Navigation from '../Navigation'
 import axios from 'axios';
 import Table from 'react-bootstrap/Table';
 
- 
+import ReactTable from "react-table";
+import "react-table/react-table.css";
+
 class Live_program_template_home extends Component {
  
   constructor(props) {
@@ -82,23 +84,69 @@ class Live_program_template_home extends Component {
   }
  
   render() {
+    const {lists} = this.state
     return (
       <div>
         <Navigation />
-        <header>
- 
-          <h1> Live Program Tables</h1>
-          <div>
-          {this.renderTable()}
-          {/* {this.state.lists.map((x) => {
-            return (<div>
-              <p>program_live_id: {x.program_live_id}, program_template_id: {x.program_template_id} , region_id: {x.region_id}, main_location: {x.main_location}, primary_teacher: {x.primary_teacher}, start_date: {x.start_date}, end_date: {x.end_date}</p>
-            </div>)
-        })} */}
- 
- 
-          </div>
-        </header>
+        <h1> Live Program Tables</h1>
+        <ReactTable
+          data={lists}
+          filterable
+          defaultFilterMethod = {(filter,row) =>
+          String(row[filter.id]).includes(filter.value)}
+          columns = {[
+            {
+              Header: 'Program Live ID',
+              columns: [{
+                Header: 'sort',
+                accessor: 'program_live_id'
+              }]
+            },
+            {
+              Header: 'Program Template ID',
+              columns: [{
+                Header: 'sort',
+                accessor: 'program_template_id'
+              }]
+            },
+            {
+              Header: 'Region ID',
+              columns: [{
+                Header: 'sort',
+                accessor: 'region_id'
+              }]
+            },
+            {
+              Header: 'Main Location',
+              columns: [{
+                Header: 'sort',
+                accessor: 'main_location'
+              }]
+            },
+            {
+              Header: 'Primary Teacher ID',
+              columns: [{
+                Header: 'sort',
+                accessor: 'primary_teacher'
+              }]
+            },
+            {
+              Header: 'Start Date',
+              columns: [{
+                Header: 'sort',
+                accessor: 'state_date'
+              }]
+            },
+            {
+              Header: 'End Date',
+              columns: [{
+                Header: 'sort',
+                accessor: 'end_date'
+              }]
+            }
+          ]}
+        />
+
       </div>
  
  

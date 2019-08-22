@@ -35,19 +35,19 @@ li a:hover {
   background-color: #111;
 }
 
-#lctcpage{
+#lptcpage, #lptdpage{
   text-align: center;
 }
-#lctcimage{
-  width: 25%;
-  height: auto;
-}
-#lctdimage{
+#lptcimage{
   width: 15%;
   height: auto;
 }
-#lctcimage, #lctcform,
-#lctdimage{
+#lptdimage{
+  width: 10%;
+  height: auto;
+}
+#lptcimage, #lptcform,
+#lptdimage{
   display: inline-block;
   vertical-align: top;
 }
