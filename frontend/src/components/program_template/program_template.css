@@ -1,5 +1,5 @@
-div{
-
+#program_template_create{
+  width: 100vw;
 }
 
 
@@ -35,3 +35,10 @@ li a:hover {
   background-color: #111;
 } 
 
+#watermarkedptd{
+  background-image: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url('../assets/gossamer1.png');
+  height: 364px;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}

@@ -33,25 +33,30 @@ onSubmit = (e) => {
   })
 };
 
-  render() {
-    return(
-    <div>
-       <Navigation />
+render() {
+  return(
+  <div>
+    <Navigation />
+    <div id='ctdpage'>
       <h1> Delete a existing Class_Template Object </h1>
-      <form>
-        <input
-          name = "class_template_id"
-          placeholder="Class ID"
-          value = {this.state.class_template_id}
-          onChange={e => this.change(e)}
-        />
-        <br />
-        <button onClick={e => this.onSubmit(e)}>Submit</button>
-        <br />
-      </form>
+      <img id='ctdimage' src={require('../assets/tasmanianDevil.png')} alt=''></img>
+      <div id='ctdform'>
+        <form>
+          <input
+            name = "class_template_id"
+            placeholder="Class ID"
+            value = {this.state.class_template_id}
+            onChange={e => this.change(e)}
+          />
+          <br />
+          <button onClick={e => this.onSubmit(e)}>Submit</button>
+          <br />
+        </form>
+      </div>
     </div>
-    );
-  }
+  </div>
+  );
+}
 
 
 

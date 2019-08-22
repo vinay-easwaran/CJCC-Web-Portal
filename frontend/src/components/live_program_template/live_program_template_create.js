@@ -49,80 +49,84 @@ onSubmit = (e) => {
   })
 };
 
-  render() {
-    return(
-      <div>
-      <Navigation />
+render() {
+  return(
+    <div>
+    <Navigation />
+    <div id='lptcpage'>
       <h1> Create a new Live Program Template Object </h1>
-      <Form>
-        <Row>
-          <Col md={6}>
-          <Label>Region ID</Label>
-          <Input
-            name = "region_id"
-            //placeholder="Region ID"
-            value = {this.state.region_id}
-            onChange={e => this.change(e)}
-          />
-          </Col>
-          <Col md={6}>
-          <Label>Program Template ID</Label>
-          <Input
-            name = "program_template_id"
-            //placeholder="Program Template ID"
-            value = {this.state.program_template_id}
-            onChange={e => this.change(e)}
-          />
-          </Col>
-        </Row>
-        <Row>
-          <Col md={12}>
-          <Label>Primary Teacher</Label>
-          <Input
-            name = "primary_teacher"
-            placeholder="Teacher ID (e.g) 1, 2"
-            value = {this.state.primary_teacher}
-            onChange={e => this.change(e)}
-          />
-          </Col>
-        </Row>
-        <Row>
-          <Col md={12}>
-          <Label>Main Location</Label>
-          <Input
-            name = "main_location"
-            //placeholder="Main Location"
-            value = {this.state.main_location}
-            onChange={e => this.change(e)}
-          />
-          </Col>
-        </Row>
-        <Row>
-          <Col md={6}>
-          <Label>Start Date</Label>
-          <Input
-            name = "start_date"
-            //placeholder="Start Date"
-            value = {this.state.start_date}
-            onChange={e => this.change(e)}
-          />
-          </Col>
-          <Col md={6}>
-          <Label>End Date</Label>
-          <Input
-            name = "end_date"
-            //placeholder="End Date"
-            value = {this.state.end_date}
-            onChange={e => this.change(e)}
-          />
-          </Col>
-        </Row>
-        <br/>
-        <button onClick={e => this.onSubmit(e)}>Submit</button>
-      </Form>
+      <img id='lptcimage' src={require('../assets/porkyPig.png')} alt=''></img>
+      <div id='lptcform'>
+        <Form>
+          <Row>
+            <Col md={6}>
+            <Label>Region ID</Label>
+            <Input
+              name = "region_id"
+              //placeholder="Region ID"
+              value = {this.state.region_id}
+              onChange={e => this.change(e)}
+            />
+            </Col>
+            <Col md={6}>
+            <Label>Program Template ID</Label>
+            <Input
+              name = "program_template_id"
+              //placeholder="Program Template ID"
+              value = {this.state.program_template_id}
+              onChange={e => this.change(e)}
+            />
+            </Col>
+          </Row>
+          <Row>
+            <Col md={12}>
+            <Label>Primary Teacher</Label>
+            <Input
+              name = "primary_teacher"
+              //placeholder="Primary Teacher"
+              value = {this.state.primary_teacher}
+              onChange={e => this.change(e)}
+            />
+            </Col>
+          </Row>
+          <Row>
+            <Col md={12}>
+            <Label>Main Location</Label>
+            <Input
+              name = "main_location"
+              //placeholder="Main Location"
+              value = {this.state.main_location}
+              onChange={e => this.change(e)}
+            />
+            </Col>
+          </Row>
+          <Row>
+            <Col md={6}>
+            <Label>Start Date</Label>
+            <Input
+              name = "start_date"
+              //placeholder="Start Date"
+              value = {this.state.start_date}
+              onChange={e => this.change(e)}
+            />
+            </Col>
+            <Col md={6}>
+            <Label>End Date</Label>
+            <Input
+              name = "end_date"
+              //placeholder="End Date"
+              value = {this.state.end_date}
+              onChange={e => this.change(e)}
+            />
+            </Col>
+          </Row>
+          <button onClick={e => this.onSubmit(e)}>Submit</button>
+        </Form>
+      </div>
     </div>
-    );
-  }
+  </div>
+  );
+}
 
 
 

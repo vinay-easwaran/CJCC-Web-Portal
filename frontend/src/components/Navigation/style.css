@@ -1,14 +1,21 @@
 a{
+  color:black;
+}
+a.nav-link:focus, a.nav-link:hover{
+  color: black !important;
+  background: pink !important;
+}
+
+
+.nav{
+  background: red;
+}
+
+a.dropdown-item:hover, a.dropdown-item:focus{
   color: black;
+  background: pink;
 }
-
-h1 {
-  line-height: 2;
-  text-align: center;
-
-}
-h2 {
-
-  text-align: center;
-
+a:hover, a:focus{
+  color: black;
+  background: pink;
 }

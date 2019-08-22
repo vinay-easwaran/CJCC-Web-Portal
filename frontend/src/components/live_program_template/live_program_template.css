@@ -34,3 +34,20 @@ li a {
 li a:hover {
   background-color: #111;
 }
+
+#lptcpage, #lptdpage{
+  text-align: center;
+}
+#lptcimage{
+  width: 15%;
+  height: auto;
+}
+#lptdimage{
+  width: 10%;
+  height: auto;
+}
+#lptcimage, #lptcform,
+#lptdimage{
+  display: inline-block;
+  vertical-align: top;
+}

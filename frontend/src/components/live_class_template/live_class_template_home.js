@@ -3,6 +3,8 @@ import Navigation from '../Navigation';
 import axios from 'axios';
 import Table from 'react-bootstrap/Table';
 
+import ReactTable from "react-table";
+import "react-table/react-table.css";
 // CSS?
 
 class Live_class_template_home extends Component {
@@ -67,28 +69,96 @@ class Live_class_template_home extends Component {
     )
   }
   render() {
+    const {lists} = this.state
     return (
       <div>
         <Navigation />
-        <header>
-         
-          <h1>
-              Live Class Template Tables
-          </h1>
-
-          <div>
-          {this.renderTable()}
-            {/* {this.state.lists.map((x) => {
-              return (<div>
-                <p> 
-                class_id: {x.class_id}, is_part_of_program: {x.is_part_of_program} , lattitude: {x.lattitude}, longitude: {x.longitude}, max_students: {x.max_students}, name: {x.name}, time_end: {x.time_end},
-                time_start: {x.time_start}, description: {x.description}, region_id: {x.region_id}, program_template_id: {x.program_template_id}, class_template_id:{x.class_template_id}
-                </p>
-              </div>)
-          })} */}
-        </div>
-          
-        </header>
+        <h1>Live Class Template Tables</h1>
+        <ReactTable
+          data={lists}
+          filterable
+          defaultFilterMethod = {(filter,row) =>
+          String(row[filter.id]).includes(filter.value)}
+          columns = {[
+            {
+              Header: 'Class ID',
+              columns: [{
+                Header: 'sort',
+                accessor: 'class_id'
+              }]
+            },
+            {
+              Header: 'Part of Program?',
+              columns: [{
+                Header: 'sort',
+                accessor: 'is_part_of_program'
+              }]
+            },
+            {
+              Header: 'Lattitude',
+              columns: [{
+                Header: 'sort',
+                accessor: 'lattitude'
+              }]
+            },
+            {
+              Header: 'Longitude',
+              columns: [{
+                Header: 'sort',
+                accessor: 'longitude'
+              }]
+            },
+            {
+              Header: 'Name',
+              columns: [{
+                Header: 'sort',
+                accessor: 'name'
+              }]
+            },
+            {
+              Header: 'Time Start',
+              columns: [{
+                Header: 'sort',
+                accessor: 'time_start'
+              }]
+            },
+            {
+              Header: 'Time End',
+              columns: [{
+                Header: 'sort',
+                accessor: 'time_end'
+              }]
+            },
+            {
+              Header: 'Description',
+              columns: [{
+                Header: 'sort',
+                accessor: 'description'
+              }]
+            },
+            {
+              Header: 'Region ID',
+              columns: [{
+                Header: 'sort',
+                accessor: 'region_id'
+              }]
+            },
+            {
+              Header: 'Program Template ID',
+              columns: [{
+                Header: 'sort',
+                accessor: 'program_template_id'
+              }]
+            },
+            {
+              Header: 'Class Template ID',
+              columns: [{
+                Header: 'sort',
+                accessor: 'class_template_id'
+              }]
+            }
+          ]}
+        />
       </div>
     );
   }

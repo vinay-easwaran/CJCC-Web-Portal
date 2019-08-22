@@ -42,25 +42,30 @@ onSubmit = (e) => {
   })
 };
 
-  render() {
-    return(
-    <div>
-      <Navigation />
+render() {
+  return(
+  <div>
+    <Navigation />
+    <div id='lctdpage'>
       <h1> Delete a existing Live Class Template Object </h1>
-      <form>
-        <input
-          name = "live_class_template_id"
-          placeholder="Live Class Template ID"
-          value = {this.state.live_class_template_id}
-          onChange={e => this.change(e)}
-        />
-        <br />
-        <button onClick={e => this.onSubmit(e)}>Submit</button>
-        <br />
-      </form>
+      <img id='lctdimage' src={require('../assets/marvinMartian.png')} alt=''></img>
+      <div id='lctdform'>
+        <form>
+          <input
+            name = "live_class_template_id"
+            placeholder="Live Class Template ID"
+            value = {this.state.live_class_template_id}
+            onChange={e => this.change(e)}
+          />
+          <br />
+          <button onClick={e => this.onSubmit(e)}>Submit</button>
+          <br />
+        </form>
+      </div>
     </div>
-    );
-  }
+  </div>
+  );
+}
 
 
 

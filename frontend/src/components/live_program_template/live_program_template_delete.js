@@ -32,25 +32,30 @@ onSubmit = (e) => {
   })
 };
 
-  render() {
-    return(
-    <div>
-      <Navigation />
-      <h1> Delete a existing Live Program Template Object </h1>
-      <form>
-        <input
-          name = "live_program_template_id"
-          placeholder="Live Program ID"
-          value = {this.state.live_program_template_id}
-          onChange={e => this.change(e)}
-        />
-        <br />
-        <button onClick={e => this.onSubmit(e)}>Submit</button>
-        <br />
-      </form>
+render() {
+  return(
+  <div>
+    <Navigation />
+    <div id='lctdpage'>
+      <h1> Delete a existing Live Class Template Object </h1>
+      <img id='lctdimage' src={require('../assets/marvinMartian.png')} alt=''></img>
+      <div id='lctdform'>
+        <form>
+          <input
+            name = "live_class_template_id"
+            placeholder="Live Class Template ID"
+            value = {this.state.live_class_template_id}
+            onChange={e => this.change(e)}
+          />
+          <br />
+          <button onClick={e => this.onSubmit(e)}>Submit</button>
+          <br />
+        </form>
+      </div>
     </div>
-    );
-  }
+  </div>
+  );
+}
 
 
 
